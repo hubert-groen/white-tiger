@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+class Name
+{
+public:
+    string name, model;
+};
+
+class Data
+{
+public:
+    int vintage, mileage;
+};
+
+
+class Car :public Name, public Data
+
+{
+    public:
+
+    void addiing_car()
+    {
+        cout << endl;
+        cout << "Name: "; cin >> name;
+        cout << "Model: "; cin >> model;
+        cout << "Vintage: "; cin >> vintage;
+        cout << "Mileage (in thousands km): "; cin >> mileage;
+        cout << endl;
+    }
+
+    void show()
+    {
+        cout<<name<<" "<<model<< endl;
+        cout << "vintage: "<<vintage<<"; mileage: "<<mileage<<".000 km" << endl;
+    }
+};
+
+
+int main()
+{
+    int x;
+    cout << "How many cars you want to add: "; cin >>x;
+
+    Car c[x];
+
+    for (int i=0; i<x; i++)
+    {
+        c[i].addiing_car();
+        c[i].show();
+    }
+
+    return 0;
+}
